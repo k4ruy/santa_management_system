@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": "baa1",
+      "title": "crash",
+      "views": 2,
+      "likes": 9,
+      "timestamp": 1731674445506
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "kids": [
+    {
+      "name": "Yuriy",
+      "views": 3,
+      "likes": 5
+    },
+    {
+      "name": "Thomas",
+      "views": 3,
+      "likes": 5
+    },
+    {
+      "name": "Mara",
+      "views": 3,
+      "likes": 5
+    }
+  ],
+  "toys": [
+    {
+      "name": "ball"
+    },
+    {
+      "name": "hat"
+    },
+    {
+      "name": "car"
+    }
+  ]
+}

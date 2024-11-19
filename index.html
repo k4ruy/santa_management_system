@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Santa Management System</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body class="min-h-screen flex flex-col justify-center grow-0 text-black">
-        <main class="container container-sm mx-auto flex flex-wrap my-20">
-            <div id="kids" class="w-3/4">
-                <div class="grid grid-cols-3 gap-2 mb-4 flex-wrap">
-                    <input id="input-name" type="text" placeholder="Child Name" class="text-input h-14" />
-                    <input id="input-points" type="number" placeholder="Points" class="text-input h-14" />
-                    <input id="input-location" type="text" placeholder="Location" class="text-input h-14" />
-                    <button id="btn-add-child" class="button w-full col-span-3 lg:col-span-1 lg:min-w-48 h-14">Add</button>
 
-                    <button id="clear" class="button lg:min-w-48 h-14">Refresh Children</button>
-                    <button id="clearStorage" class="button lg:min-w-48 h-14">Clear Saved Children</button>
-                </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Santa Management System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
 
-                <div id="kids-output"></div>
-            </div>
-            <div id="toys" class="w-1/4 px-2">
-                <div id="toyform" class="pb-4 flex gap-2 flex-wrap">
-                    <input class="text-input w-full" id="toyName">
-                    <button class="button px-4 h-14" id="btnAddToy">Add toy</button>
-                </div>
-                <div id="toylist" class="flex flex-col gap-2"></div>
-            </div>
-            <!-- Saved Posts Section -->
-            <div class="saved-posts w-full bg-white/20 p-8 rounded-xl mt-4">
-                <h2 class="text-xl text-white font-bold">Bag of children &amp; presents</h2>
-                <div id="savedOutput"></div>
-            </div>
-        </main>
+<body class="min-h-screen flex flex-col justify-center grow-0 text-black">
+    <main class="container container-sm mx-auto flex flex-wrap my-20">
+        <div id="kids" class="w-3/4">
+            <div class="grid grid-cols-3 gap-2 mb-4 flex-wrap">
+                <input id="input-name" type="text" placeholder="Child Name" class="text-input h-14" />
+                <input id="input-points" type="number" placeholder="Points" class="text-input h-14" />
+                <input id="input-location" type="text" placeholder="Location" class="text-input h-14" />
+                <button id="btn-add-child" class="button w-full col-span-3 lg:col-span-1 lg:min-w-48 h-14">Add</button>
 
-        <script src="core.js"></script>
-    </body>
+                <button id="clear" class="button lg:min-w-48 h-14">Refresh Children</button>
+                <button id="clearStorage" class="button lg:min-w-48 h-14">Clear Saved Children</button>
+            </div>
+
+            <div id="kids-output"></div>
+        </div>
+        <div class="class=" w-1/4 px-2"></div>
+
+        <div id="toys" class="w-1/4 px-2">
+            <div class="images-container flex gap-4">
+                <!-- <img src="img/christmas_tree-removebg-preview.png" alt="Christmas Tree" class="floating-logo"> -->
+                <img src="img/bagWithPresents.png" alt="giftbag" class="floating-logo">
+
+            </div>
+            <div id="toyform" class="pb-4 flex gap-2 flex-wrap">
+                <input class="text-input w-full" id="toyName" placeholder="What are your wishes?">
+                <button class="button px-4 h-14" id="btnAddToy">Add toy</button>
+            </div>
+            <div id="toylist" class="flex flex-col gap-2"></div>
+        </div>
+
+
+        <!-- Saved Posts Section -->
+        <div class="saved-posts w-full bg-white/20 p-8 rounded-xl mt-4">
+            <h2 class="text-xl text-white font-bold">Bag of children &amp; presents</h2>
+            <div id="savedOutput"></div>
+        </div>
+    </main>
+
+    <script src="core.js"></script>
+</body>
+
 </html>

@@ -3,31 +3,71 @@
 @tailwind utilities;
 
 body {
-    background-image: url("img/backg1.jpg");
+  background-image: url("img/backg1.jpg");
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .button {
-    @apply rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur hover:bg-white/40 transition;
-    /* flex-1 */
+  @apply rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur hover:bg-white/40 transition;
+  /* flex-1 */
 }
 .smallbutton {
-    @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur min-w-10 hover:bg-white/40 transition;
+  @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur min-w-10 hover:bg-white/40 transition;
 }
 .child-item {
-    @apply bg-white/10 my-4 p-2 rounded-lg flex justify-between items-center text-white;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+  @apply bg-white/10 my-4 p-2 rounded-lg flex justify-between items-center text-white;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .label {
-    @apply inline-block bg-green-400/20 rounded-full px-4 py-1 border border-white mx-2;
+  @apply inline-block bg-green-400/20 rounded-full px-4 py-1 border border-white mx-2;
 }
 
 .text-input {
-    @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur flex-auto placeholder:text-white/70;
+  @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur flex-auto placeholder:text-white/70;
 }
 
 .logoBag {
-    width: 54px;
+  width: 54px;
+}
+/* div#toys {
+  border: solid;
+} */
+
+.floating-logo {
+  position: relative;
+  animation:
+    float 3s ease-in-out infinite,
+    wobble 1.5s ease-in-out infinite;
+  width: 100px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg); /* Geen draaiing */
+  }
+  50% {
+    transform: translateX(10px) rotate(2deg); /* Beweeg iets naar rechts en kantel */
+  }
+}
+.santa-icon {
 }

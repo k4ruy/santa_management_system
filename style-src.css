@@ -15,3 +15,7 @@
 .label {
     @apply inline-block bg-green-400/20 rounded-full px-4 py-1 border border-white mr-2;
 }
+
+.text-input {
+    @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur min-w-52 flex-auto placeholder:text-white/70;
+}

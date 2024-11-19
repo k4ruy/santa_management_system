@@ -17,8 +17,26 @@ body {
   @apply rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur hover:bg-white/40 transition;
   /* flex-1 */
 }
+.button-red {
+    /* @apply rounded-lg bg-red-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-red-500/50 transition; */
+    @apply py-3 text-center text-white border border-red-600 rounded-lg hover:bg-red-800/50 hover:border-red-800 duration-200;
+}
+.button-green {
+    /*@apply rounded-lg bg-green-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-green-500/50 transition;*/
+    @apply py-3 text-center text-white border border-teal-600 rounded-lg hover:bg-teal-800/50 hover:border-teal-800 duration-200;
+}
+.button-blue {
+    /*@apply rounded-lg bg-blue-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-blue-500/50 transition;*/
+    @apply py-3 text-center text-white border border-violet-600 rounded-lg hover:bg-violet-800/50 hover:border-violet-800 duration-200;
+}
 .smallbutton {
     @apply py-3 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur hover:bg-white/40 transition;
+}
+.smallbutton-green {
+    @apply py-3 rounded-lg bg-green-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-green-500/50 transition;
+}
+.smallbutton-red {
+    @apply py-3 rounded-lg bg-red-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-red-500/50 transition;
 }
 .child-item {
     @apply bg-white/10 my-4 p-2 rounded-lg text-white;
@@ -27,8 +45,12 @@ body {
     transition: all 0.3s ease;
 }
 
+.text-shadow {
+    text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+}
+
 .label {
-    @apply inline-block bg-indigo-300/20 rounded-full px-4 py-1 border border-white mx-2;
+    @apply inline-block bg-teal-300/40 rounded-full px-4 py-1 border border-teal-500 mx-2;
 }
 
 .text-input {
@@ -73,5 +95,6 @@ body {
 }
 
 .glow:hover {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px hsl(170, 100%, 45%), 0 0 40px hsl(170, 100%, 45%), 0 0 50px hsl(170, 100%, 45%), 0 0 60px hsl(170, 100%, 45%), 0 0 70px hsl(170, 100%, 45%);
+
 }

@@ -6,6 +6,17 @@ const output = document.getElementById("output");
 const savedOutput = document.getElementById("savedOutput");
 let dbToys = [];
 
+
+// Create the goody points svg
+const goodySvg = `
+    <span class="text-yellow-300">
+        <svg class="w-4" data-slot="icon" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M3.75 3.5c0 .563.186 1.082.5 1.5H2a1 1 0 0 0 0 2h5.25V5h1.5v2H14a1 1 0 1 0 0-2h-2.25A2.5 2.5 0 0 0 8 1.714 2.5 2.5 0 0 0 3.75 3.5Zm3.499 0v-.038A1 1 0 1 0 6.25 4.5h1l-.001-1Zm2.5-1a1 1 0 0 0-1 .962l.001.038v1h.999a1 1 0 0 0 0-2Z"></path>
+            <path d="M7.25 8.5H2V12a2 2 0 0 0 2 2h3.25V8.5ZM8.75 14V8.5H14V12a2 2 0 0 1-2 2H8.75Z"></path>
+        </svg>
+    </span>
+`;
+
 function fetchToys() {
     fetch(apiUrl + "/toys")
         .then((response) => response.json())
@@ -25,8 +36,8 @@ function displayToys() {
     for (let i = 0; i < dbToys.length; i++) {
         //toys.innerHTML += `<div id="toy-${i}" data-id="${i}" class="source-element px-2 py-4 rounded-lg bg-white/15 font-semibold text-white border border-solid border-white/20 backdrop-blur" draggable="true">${dbToys[i].name}</div>`;
         toys.innerHTML += `
-            <div class="flex justify-between source-element px-2 py-4 rounded-lg bg-white/15 font-semibold text-white border border-solid border-white/20 backdrop-blur cursor-move hover:bg-indigo-300/30 hover:text-fuchsia-500 transition-colors hover:shadow-[0_0px_20px_0px_rgba(245,40,145,0.8)]" draggable="true" data-id="${dbToys[i].id}">
-                ${dbToys[i].name}
+            <div class="flex justify-between source-element px-2 py-4 rounded-lg bg-white/15 font-semibold text-white border border-solid border-white/20 backdrop-blur cursor-move hover:bg-indigo-300/30 hover:text-teal-500 transition-colors hover:shadow-[0_0px_20px_0px_rgba(20,184,166,0.8)]" draggable="true" data-id="${dbToys[i].id}">
+                <span class="text-shadow">${dbToys[i].name}</span>
                 <div onclick="deleteToy('${dbToys[i].id}')" class="cursor-pointer">
                     <svg class="w-5 h-45 data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"></path>
@@ -67,14 +78,20 @@ function fetchChildren() {
                 const textB = b.name.toUpperCase();
                 return textA < textB ? -1 : textA > textB ? 1 : 0;
             });
+
             sortedData.forEach((child) => {
                 kidsOutput.innerHTML += `
-                      <div id="child-${child.id}" class="child-item grid grid-cols-1 lg:grid-cols-6 gap-2 bg-white/10 my-2 rounded-md p-2 text-white border border-solid border-white/20">
+                      <div id="child-${child.id}" class="child-item text-shadow grid grid-cols-1 lg:grid-cols-6 gap-2 bg-white/10 my-2 rounded-md p-2 text-white border border-solid border-white/20">
                           <div class="child-content lg:col-span-3">
                               <div class="flex justify-between">
                                   <div class="childName w-1/3">${child.name}</div>
-                                  <div class="childPoints w-1/3">${child.points} points</div>
-                                  <div class="childLocation w-1/3">${child.location}</div>
+                                  <div class="childPoints w-1/3 flex flex-wrap">${goodySvg.repeat(child.points)}</div>
+                                  <div class="childLocation w-1/3 flex items-start">
+                                    <svg class="w-4 mr-1 mt-1 text-orange-600" data-slot="icon" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path clip-rule="evenodd" fill-rule="evenodd" d="m7.539 14.841.003.003.002.002a.755.755 0 0 0 .912 0l.002-.002.003-.003.012-.009a5.57 5.57 0 0 0 .19-.153 15.588 15.588 0 0 0 2.046-2.082c1.101-1.362 2.291-3.342 2.291-5.597A5 5 0 0 0 3 7c0 2.255 1.19 4.235 2.292 5.597a15.591 15.591 0 0 0 2.046 2.082 8.916 8.916 0 0 0 .189.153l.012.01ZM8 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
+                                    </svg>
+                                    ${child.location}
+                                  </div>
                               </div>
                           </div>
                           <div class="edit-form lg:col-span-4" style="display: none;">
@@ -82,11 +99,11 @@ function fetchChildren() {
                                 <input type="text" class="edit-name text-input col-span-2" value="${child.name}">
                                 <input type="number" class="edit-points text-input col-span-2" value="${child.points}">
                                 <input type="text" class="edit-location text-input col-span-2" value="${child.location}">
-                                <button class="smallbutton pl-3" onclick="saveEdit('${child.id}')">
+                                <button class="button-green flex justify-center" onclick="saveEdit('${child.id}')">
                                     <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
                                     </svg></button>
-                                <button class="smallbutton pl-3" onclick="cancelEdit('${child.id}')">
+                                <button class="button-red flex justify-center" onclick="cancelEdit('${child.id}')">
                                     <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636"></path>
                                     </svg>
@@ -94,13 +111,25 @@ function fetchChildren() {
                             </div>
                           </div>
                           <div class="button-group w-full">
-                            <div class="grid grid-cols-3 lg:grid-cols-2 gap-2 mb-2">
-                                <button onclick="editChild('${child.id}')" class="button">Edit</button>
-                                <button onclick="saveToLocal('${child.id}')" class="button">Save</button>
-                                <button onclick="deleteChild('${child.id}')" class="button lg:w-full lg:col-span-2">Delete</button>
+                            <div class="grid grid-cols-3 lg:grid-cols-2 gap-2">
+                                <button onclick="editChild('${child.id}')" class="button-blue h-10 flex justify-center items-center">
+                                    <svg class="w-6" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"></path>
+                                    </svg>
+                                </button>
+                                <button onclick="saveToLocal('${child.id}')" class="button-green h-10 flex justify-center items-center">
+                                    <svg class="w-6" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12"></path>
+                                    </svg>
+                                </button>
+                                <button onclick="deleteChild('${child.id}')" class="button-red h-10 lg:w-full lg:col-span-2 flex justify-center items-center">
+                                    <svg class="w-6" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"></path>
+                                    </svg>
+                                </button>
                             </div>
                           </div>
-                          <div class="target-container col-span-4 lg:col-span-2 bg-gray-100/10 border-2 border-dashed border-gray-400 p-4 rounded-lg min-h-[80px] transition-colors flex flex-wrap gap-2 justify-center" data-target="${child.id}"><div class="text-white/50 text-center pb-2 w-full">Drag toys here</div></div>
+                          <div class="target-container col-span-4 lg:col-span-2 bg-gray-100/10 border-2 border-dashed border-gray-400 p-2 rounded-lg min-h-[65px] transition-colors grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-2" data-target="${child.id}"><div class="text-white/50 text-center pb-2 w-full col-span-2 md:col-span-3 lg:col-span-1 xl:col-span-2">Drag toys here</div></div>
                       </div>
                   `;
                 //   <div id="presents-${child.id}" class="target-container bg-green-200 w-96 h-10" data-target="${child.id}"></div>
@@ -127,6 +156,11 @@ document.getElementById("btn-add-child").addEventListener("click", () => {
         location: document.getElementById("input-location").value,
         timestamp: Date.now(), // Add timestamp when creating new post
     };
+
+    if (newPost.name == "") {
+        alert("Please enter the child's name");
+        return;
+    }
 
     fetch(apiUrl + "/kids", {
         method: "POST",
@@ -303,13 +337,13 @@ function loadSavedChildren() {
             childDiv.className = "child-item";
             childDiv.innerHTML = `
                 <div class="grid grid-cols-3 items-center">
-                    <div class="col-span-2 grid grid-cols-3 justify-between gap-4">
+                    <div class="col-span-2 grid grid-cols-3 justify-between gap-4 text-shadow">
                         <div class="childName">${child.name}</div>
-                        <div class="childPoints">${child.points}</div>
-                        <div class="childLocation">${child.location}</div>
+                        <div class="childPoints flex flex-wrap">${child.points}</div>
+                        <div class="childLocation flex">${child.location}</div>
                         <div class="childToys col-span-4">${child.toys.map((x) => '<div class="label mb-2">' + x + "</div>").join("")}</div>
                     </div>
-                    <button class="button px-2 lg:min-w-48 py-2" onclick="removeFromSaved('${child.id}')">Remove</button>
+                    <button class="button-red px-2 lg:min-w-48 py-2 max-w-48" onclick="removeFromSaved('${child.id}')">Remove</button>
                 </div>
               `;
 
@@ -391,7 +425,7 @@ function handleDrop(e) {
 
     // Create new dropped item
     const droppedItem = document.createElement("div");
-    droppedItem.className = "dropped-item bg-pink-100/20 rounded-md border-2 border-pink-300 p-2 min-w-40";
+    droppedItem.className = "dropped-item bg-teal-100/20 rounded-md border-2 border-teal-500 p-2 min-w-40";
     droppedItem.textContent = data.text;
     droppedItem.dataset.sourceId = data.id;
 

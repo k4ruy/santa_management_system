@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+    @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur min-w-52 hover:bg-white/40;
+    /* flex-1 */
+}
+.child-item {
+    @apply bg-white/10 my-4 p-2 rounded-lg flex justify-between items-center text-white;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+.label {
+    @apply inline-block bg-green-400/20 rounded-full px-4 py-1 border border-white mr-2;
+}

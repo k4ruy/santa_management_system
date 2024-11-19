@@ -1,52 +1,56 @@
 {
   "kids": [
     {
-      "id": "2268",
       "name": "Wim",
-      "timestamp": 1731920193168
+      "points": 10,
+      "location": "Genk Thor",
+      "timestamp": 1732012201824,
+      "id": "2268"
     },
     {
-      "id": "ec52",
       "name": "Thibe",
-      "timestamp": 1731920197063
+      "points": 50,
+      "location": "Halen",
+      "timestamp": 1732012190176,
+      "id": "ec52"
     },
     {
-      "id": "f816",
       "name": "Rhune",
-      "timestamp": 1731920200961
+      "points": 20,
+      "location": "Diest",
+      "timestamp": 1732012180634,
+      "id": "f816"
     },
     {
-      "id": "2b27",
       "name": "Larissa",
-      "timestamp": 1731920204903
+      "points": 5,
+      "location": "Zichem",
+      "timestamp": 1732012169050,
+      "id": "2b27"
     },
     {
-      "id": "6150",
       "name": "Brent",
-      "timestamp": 1731937958723
+      "points": 5,
+      "location": "Genk Thor",
+      "timestamp": 1732019211551,
+      "id": "6150"
+    },
+    {
+      "id": "f640",
+      "name": "xccwxc",
+      "points": 3,
+      "location": "cxcwcxw",
+      "timestamp": 1732013198023
+    },
+    {
+      "name": "Massimo",
+      "points": 10,
+      "location": "Genk",
+      "timestamp": 1732018800361,
+      "id": "6d2f"
     }
   ],
   "toys": [
-    {
-      "id": "toy1",
-      "name": "ball"
-    },
-    {
-      "id": "toy2",
-      "name": "hat"
-    },
-    {
-      "id": "toy3",
-      "name": "car"
-    },
-    {
-      "id": "toy4",
-      "name": "lego"
-    },
-    {
-      "id": "toy5",
-      "name": "Playmobil"
-    },
     {
       "id": "toy6",
       "name": "Furby"
@@ -62,6 +66,22 @@
     {
       "id": "toy9",
       "name": "Playstation"
+    },
+    {
+      "id": "e2a7",
+      "name": "Chess"
+    },
+    {
+      "id": "bd5f",
+      "name": "Phone"
+    },
+    {
+      "id": "dd99",
+      "name": "Yo-Yo"
+    },
+    {
+      "id": "ae91",
+      "name": "Lego"
     }
   ]
 }

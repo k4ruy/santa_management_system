@@ -1344,4 +1344,8 @@ body {
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+  .xl\:pt-9 {
+    padding-top: 2.25rem;
+  }
 }

@@ -65,7 +65,7 @@ function fetchChildren() {
 
             if (data.length === 0) {
                 const noPostsMessage = document.createElement("div");
-                noPostsMessage.className = "no-posts-message";
+                noPostsMessage.className = "no-posts-message text-white text-xl text-shadow";
                 noPostsMessage.textContent = "No children available. Add your first child!";
                 kidsOutput.appendChild(noPostsMessage);
                 return;

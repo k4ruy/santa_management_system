@@ -967,6 +967,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  font-family: "Funnel Display", sans-serif;
 }
 
 .font-xmas {
@@ -1013,9 +1014,8 @@ body {
 }
 
 .button-red {
-  /* @apply bg-red-500/20 border-solid border-white/20 backdrop-blur hover:bg-red-500/50 transition; */
   --tw-border-opacity: 1;
-  border-color: rgb(220 38 38 / var(--tw-border-opacity, 1));
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   text-align: center;
@@ -1036,9 +1036,8 @@ body {
 }
 
 .button-green {
-  /*@apply bg-green-500/20 border-solid border-white/20 backdrop-blur hover:bg-green-500/50 transition;*/
   --tw-border-opacity: 1;
-  border-color: rgb(13 148 136 / var(--tw-border-opacity, 1));
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   text-align: center;
@@ -1059,9 +1058,8 @@ body {
 }
 
 .button-blue {
-  /*@apply bg-blue-500/20 border-solid border-white/20 backdrop-blur hover:bg-blue-500/50 transition;*/
   --tw-border-opacity: 1;
-  border-color: rgb(124 58 237 / var(--tw-border-opacity, 1));
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   text-align: center;
@@ -1165,7 +1163,7 @@ body {
 }
 
 .text-shadow {
-  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
 
 .label {
@@ -1213,21 +1211,15 @@ body {
   width: 54px;
 }
 
-/* div#toys {
-  border: solid;
-} */
-
 .floating-logo {
   position: relative;
-  animation:
-    float 3s ease-in-out infinite,
-    wobble 1.5s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite, wobble 1.5s ease-in-out infinite;
   width: 100px;
 }
 
 @keyframes float {
   0%,
-  100% {
+    100% {
     transform: translateY(0);
   }
 
@@ -1238,7 +1230,7 @@ body {
 
 @keyframes wobble {
   0%,
-  100% {
+    100% {
     transform: translateX(0) rotate(0deg);
     /* Geen draaiing */
   }
@@ -1253,14 +1245,7 @@ body {
 }
 
 .glow:hover {
-  text-shadow:
-    0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 30px hsl(170, 100%, 45%),
-    0 0 40px hsl(170, 100%, 45%),
-    0 0 50px hsl(170, 100%, 45%),
-    0 0 60px hsl(170, 100%, 45%),
-    0 0 70px hsl(170, 100%, 45%);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px hsl(170, 100%, 45%), 0 0 40px hsl(170, 100%, 45%), 0 0 50px hsl(170, 100%, 45%), 0 0 60px hsl(170, 100%, 45%), 0 0 70px hsl(170, 100%, 45%);
 }
 
 .snowfall {

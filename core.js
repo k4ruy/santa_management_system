@@ -339,20 +339,11 @@ function loadSavedChildren() {
                         <div class="childLocation flex">${child.location}</div>
                         <div class="childToys col-span-4">${child.toys.map((x) => '<div class="label mb-2">' + x + "</div>").join("")}</div>
                     </div>
-                    <button class="button-red px-2 lg:min-w-48 py-2 max-w-48" onclick="removeFromSaved('${child.id}')">Remove</button>
+                    <div class="flex justify-end">
+                        <button class="button-red px-2 lg:min-w-48 py-2 max-w-48" onclick="removeFromSaved('${child.id}')">Remove</button>
+                    </div>
                 </div>
               `;
-
-
-            {/*
-                  <span>${child.name} ${child.toys.map((x) => '<div class="label">' + x + "</div>").join("")}</span> <div class="child-content">
-    <div class="flex justify-between w-96">
-        <div class="childName w-1/3">${child.name}</div>
-        <div class="childPoints w-1/3">${child.points} points</div>
-        <div class="childLocation w-1/3">${child.location}</div>
-    </div>
-</div> */}
-
 
             savedOutput.appendChild(childDiv);
         });

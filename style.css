@@ -751,6 +751,10 @@ video {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -1285,7 +1289,7 @@ body {
   }
 }
 
-/* Genereer 50 unieke sneeuwvlokken */
+/* sneeuwvlokken */
 
 .snowflake:nth-child(1n) {
   left: 1%;

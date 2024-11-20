@@ -62,7 +62,6 @@ function fetchChildren() {
     fetch(apiUrl + "/kids")
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
 
             if (data.length === 0) {
                 const noPostsMessage = document.createElement("div");
@@ -243,8 +242,6 @@ function saveEdit(id) {
         timestamp: Date.now(), // Update timestamp
     };
 
-    console.log(updatedChild);
-
     // Send PUT request to update the post
     fetch(`${apiUrl}/kids/${id}`, {
         method: "PUT",
@@ -297,17 +294,16 @@ function saveToLocal(childId) {
             toys: childToysIds,
         };
 
-        console.log(child);
-
         const savedChildren = JSON.parse(localStorage.getItem("savedChildren") || "[]");
-
-        console.log(savedChildren);
 
         if (!savedChildren.some((p) => p.id === child.id)) {
             // Comparing strings with strings
             savedChildren.push(child);
             localStorage.setItem("savedChildren", JSON.stringify(savedChildren));
             loadSavedChildren();
+
+            // Scroll to the savedposts section
+            document.getElementById('savedposts').scrollIntoView();
         } else {
             alert("This child is already saved!");
         }
@@ -386,7 +382,6 @@ document.getElementById("clear").addEventListener("click", fetchChildren);
 
 // Drag and drop
 function handleDragStart(e) {
-    console.log(e);
     e.dataTransfer.setData(
         "text/plain",
         JSON.stringify({

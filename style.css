@@ -623,6 +623,11 @@ video {
   margin-bottom: 5rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -887,6 +892,11 @@ video {
   text-align: center;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -908,6 +918,11 @@ video {
 .text-orange-600 {
   --tw-text-opacity: 1;
   color: rgb(234 88 12 / var(--tw-text-opacity, 1));
+}
+
+.text-teal-600 {
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
@@ -953,6 +968,10 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+.font-xmas {
+  font-family: "Mountains of Christmas", serif;
 }
 
 .button-core {
@@ -1147,7 +1166,7 @@ body {
 }
 
 .text-shadow {
-  text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
 }
 
 .label {
@@ -1201,15 +1220,13 @@ body {
 
 .floating-logo {
   position: relative;
-  animation:
-    float 3s ease-in-out infinite,
-    wobble 1.5s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite, wobble 1.5s ease-in-out infinite;
   width: 100px;
 }
 
 @keyframes float {
   0%,
-  100% {
+    100% {
     transform: translateY(0);
   }
 
@@ -1220,7 +1237,7 @@ body {
 
 @keyframes wobble {
   0%,
-  100% {
+    100% {
     transform: translateX(0) rotate(0deg);
     /* Geen draaiing */
   }
@@ -1351,9 +1368,5 @@ body {
 
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .xl\:pt-9 {
-    padding-top: 2.25rem;
   }
 }

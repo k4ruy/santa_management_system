@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 body {
-  background-image: url("img/backg1.jpg");
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+    background-image: url("img/backg1.jpg");
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.font-xmas {
+    font-family: "Mountains of Christmas", serif;
 }
 
 .button-core {
@@ -18,8 +22,8 @@ body {
 }
 
 .button {
-  @apply button-core bg-white/10 border-solid border-white/20 backdrop-blur hover:bg-white/40;
-  /* flex-1 */
+    @apply button-core bg-white/10 border-solid border-white/20 backdrop-blur hover:bg-white/40;
+    /* flex-1 */
 }
 .button-red {
     /* @apply bg-red-500/20 border-solid border-white/20 backdrop-blur hover:bg-red-500/50 transition; */
@@ -51,55 +55,52 @@ body {
 }
 
 .text-shadow {
-    text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
 }
 
 .label {
-    @apply inline-block bg-teal-300/40 rounded-xl px-4 py-1 border border-teal-500 mx-2 ;
+    @apply inline-block bg-teal-300/40 rounded-xl px-4 py-1 border border-teal-500 mx-2;
 }
 
 .text-input {
-  @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur flex-auto placeholder:text-white/20;
+    @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur flex-auto placeholder:text-white/20;
 }
 
 .logoBag {
-  width: 54px;
+    width: 54px;
 }
 /* div#toys {
   border: solid;
 } */
 
 .floating-logo {
-  position: relative;
-  animation:
-    float 3s ease-in-out infinite,
-    wobble 1.5s ease-in-out infinite;
-  width: 100px;
+    position: relative;
+    animation: float 3s ease-in-out infinite, wobble 1.5s ease-in-out infinite;
+    width: 100px;
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 @keyframes wobble {
-  0%,
-  100% {
-    transform: translateX(0) rotate(0deg); /* Geen draaiing */
-  }
-  50% {
-    transform: translateX(10px) rotate(2deg); /* Beweeg iets naar rechts en kantel */
-  }
+    0%,
+    100% {
+        transform: translateX(0) rotate(0deg); /* Geen draaiing */
+    }
+    50% {
+        transform: translateX(10px) rotate(2deg); /* Beweeg iets naar rechts en kantel */
+    }
 }
 .santa-icon {
 }
 
 .glow:hover {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px hsl(170, 100%, 45%), 0 0 40px hsl(170, 100%, 45%), 0 0 50px hsl(170, 100%, 45%), 0 0 60px hsl(170, 100%, 45%), 0 0 70px hsl(170, 100%, 45%);
-
 }

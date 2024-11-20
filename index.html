@@ -11,13 +11,13 @@
 <body class="min-h-screen flex flex-col justify-center grow-0 text-black">
     <main class="container container-sm mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 my-20">
         <div id="kids" class="md:col-span-3">
-            <div class="grid grid-cols-3 gap-2 mb-4 flex-wrap">
+            <div class="grid grid-cols-3 gap-2 mb-4 flex-wrap xl:grid-cols-4">
                 <input id="input-name" type="text" placeholder="Child Name" class="text-input h-14" />
                 <input id="input-points" type="number" placeholder="Goody Points" class="text-input h-14" />
                 <input id="input-location" type="text" placeholder="Location" class="text-input h-14" />
                 <button id="btn-add-child" class="button-green w-full col-span-3 md:col-span-1 h-14">Add</button>
 
-                <button id="clear" class="button-blue col-span-3 md:col-span-1 h-14">Refresh Children</button>
+                <button id="clear" class="button-blue col-span-3 md:col-span-1 h-14 xl:col-start-3">Refresh Children</button>
                 <button id="clearStorage" class="button-red col-span-3 md:col-span-1 h-14">Clear Saved Children</button>
             </div>
             <div id="kids-output"></div>
@@ -28,8 +28,8 @@
                 <!-- <img src="img/christmas_tree-removebg-preview.png" alt="Christmas Tree" class="floating-logo"> -->
                 <img src="img/bagWithPresents.png" alt="giftbag" class="floating-logo">
             </div>
-            <div id="toyform" class="pb-4 grid grid-cols-3 md:grid-cols-1 xl:grid-cols-3 gap-2">
-                <input class="text-input col-span-2 md:col-span-1 xl:col-span-2" id="toyName" />
+            <div id="toyform" class="pb-4 grid grid-cols-3 md:grid-cols-1 xl:grid-cols-2 gap-2">
+                <input class="text-input col-span-2 md:col-span-1 xl:col-span-1" id="toyName" placeholder="Toy name" />
                 <button class="button-green px-4 h-14 w-full" id="btnAddToy">Add toy</button>
             </div>
             <div id="toylist" class="grid grid-cols-3 gap-2 md:grid-cols-1 xl:grid-cols-2"></div>

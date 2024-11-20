@@ -36,9 +36,9 @@ function displayToys() {
     for (let i = 0; i < dbToys.length; i++) {
         //toys.innerHTML += `<div id="toy-${i}" data-id="${i}" class="source-element px-2 py-4 rounded-lg bg-white/15 font-semibold text-white border border-solid border-white/20 backdrop-blur" draggable="true">${dbToys[i].name}</div>`;
         toys.innerHTML += `
-            <div class="flex justify-between source-element px-2 py-4 rounded-lg bg-white/15 font-semibold text-white border border-solid border-white/20 backdrop-blur cursor-move hover:bg-indigo-300/30 hover:text-teal-500 transition-colors hover:shadow-[0_0px_20px_0px_rgba(20,184,166,0.8)]" draggable="true" data-id="${dbToys[i].id}">
+            <div class="flex justify-between items-center source-element px-2 py-4 rounded-lg bg-white/15 font-semibold text-white border border-solid border-white/20 backdrop-blur cursor-move hover:bg-indigo-300/30 hover:text-teal-500 duration-200 hover:shadow-[0_0px_20px_0px_rgba(20,184,166,0.8)] hover:scale-105" draggable="true" data-id="${dbToys[i].id}">
                 <span class="text-shadow">${dbToys[i].name}</span>
-                <div onclick="deleteToy('${dbToys[i].id}')" class="cursor-pointer">
+                <div onclick="deleteToy('${dbToys[i].id}')" class="cursor-pointer hover:text-red-500">
                     <svg class="w-5 h-45 data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"></path>
                     </svg>
@@ -425,7 +425,8 @@ function handleDrop(e) {
 
     // Create new dropped item
     const droppedItem = document.createElement("div");
-    droppedItem.className = "dropped-item bg-teal-100/20 rounded-md border-2 border-teal-500 p-2 min-w-40";
+    //droppedItem.className = "dropped-item bg-teal-100/20 rounded-md border-2 border-teal-500 p-2 min-w-40";
+    droppedItem.className = "dropped-item label";
     droppedItem.textContent = data.text;
     droppedItem.dataset.sourceId = data.id;
 

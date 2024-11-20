@@ -13,31 +13,36 @@ body {
   background-repeat: no-repeat;
 }
 
+.button-core {
+    @apply hover:scale-105 duration-200 rounded-lg text-white border;
+}
+
 .button {
-  @apply rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur hover:bg-white/40 transition;
+  @apply button-core bg-white/10 border-solid border-white/20 backdrop-blur hover:bg-white/40;
   /* flex-1 */
 }
 .button-red {
-    /* @apply rounded-lg bg-red-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-red-500/50 transition; */
-    @apply py-3 text-center text-white border border-red-600 rounded-lg hover:bg-red-800/50 hover:border-red-800 duration-200;
+    /* @apply bg-red-500/20 border-solid border-white/20 backdrop-blur hover:bg-red-500/50 transition; */
+    @apply button-core py-3 text-center border-red-600 hover:bg-red-800/50 hover:border-red-800;
 }
 .button-green {
-    /*@apply rounded-lg bg-green-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-green-500/50 transition;*/
-    @apply py-3 text-center text-white border border-teal-600 rounded-lg hover:bg-teal-800/50 hover:border-teal-800 duration-200;
+    /*@apply bg-green-500/20 border-solid border-white/20 backdrop-blur hover:bg-green-500/50 transition;*/
+    @apply button-core py-3 text-center border-teal-600 hover:bg-teal-800/50 hover:border-teal-800;
 }
 .button-blue {
-    /*@apply rounded-lg bg-blue-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-blue-500/50 transition;*/
-    @apply py-3 text-center text-white border border-violet-600 rounded-lg hover:bg-violet-800/50 hover:border-violet-800 duration-200;
+    /*@apply bg-blue-500/20 border-solid border-white/20 backdrop-blur hover:bg-blue-500/50 transition;*/
+    @apply button-core py-3 text-center border-violet-600 hover:bg-violet-800/50 hover:border-violet-800;
 }
 .smallbutton {
-    @apply py-3 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur hover:bg-white/40 transition;
+    @apply button-core py-3 bg-white/10 border-solid border-white/20 backdrop-blur hover:bg-white/40;
 }
 .smallbutton-green {
-    @apply py-3 rounded-lg bg-green-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-green-500/50 transition;
+    @apply button-core py-3 bg-green-500/20 border-solid border-white/20 backdrop-blur hover:bg-green-500/50;
 }
 .smallbutton-red {
-    @apply py-3 rounded-lg bg-red-500/20 text-white border border-solid border-white/20 backdrop-blur hover:bg-red-500/50 transition;
+    @apply button-core py-3 bg-red-500/20 border-solid border-white/20 backdrop-blur hover:bg-red-500/50;
 }
+
 .child-item {
     @apply bg-white/10 my-4 p-2 rounded-lg text-white;
     backdrop-filter: blur(5px);
@@ -50,11 +55,11 @@ body {
 }
 
 .label {
-    @apply inline-block bg-teal-300/40 rounded-full px-4 py-1 border border-teal-500 mx-2;
+    @apply inline-block bg-teal-300/40 rounded-xl px-4 py-1 border border-teal-500 mx-2 ;
 }
 
 .text-input {
-  @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur flex-auto placeholder:text-white/70;
+  @apply px-2 py-4 rounded-lg bg-white/10 text-white border border-solid border-white/20 backdrop-blur flex-auto placeholder:text-white/20;
 }
 
 .logoBag {

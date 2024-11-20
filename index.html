@@ -4,11 +4,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Santa Management System</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="style.css" />
     </head>
 
     <body class="min-h-screen flex flex-col justify-center grow-0 text-black">
-        <main class="container container-sm mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 my-20">
+        <main class="container container-sm mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 my-10">
+            <h1 class="font-xmas md:col-span-4 mb-4 text-shadow text-6xl font-bold text-teal-600">Santa Management System v1.0.1</h1>
             <div id="kids" class="md:col-span-3">
                 <div class="grid grid-cols-3 gap-2 mb-4 xl:grid-cols-4">
                     <input id="input-name" type="text" placeholder="Child Name" class="text-input h-14" />
@@ -40,6 +44,10 @@
                 <div id="savedOutput"></div>
             </div>
         </main>
+
+        <footer>
+            <div class="container container-sm mx-auto text-white">&copy;2024 Team API Alchemists - All rights reserved</div>
+        </footer>
 
         <script src="core.js"></script>
     </body>
